@@ -43,7 +43,14 @@ Public Class Form1
                 End If
             End While
         End Using
-        Dim sortedNumbers = numbersList.OrderBy(Function(n) n) 
+        Dim sortedNumbers = numbersList.OrderBy(Function(n) n)
+
+        Using writer As New StreamWriter(filePath, False)
+            For Each number As Double In sortedNumbers
+                writer.WriteLine(number)
+            Next
+        End Using
+
         For Each number As Double In sortedNumbers
             lstSortedNumber.Items.Add(number)
         Next
