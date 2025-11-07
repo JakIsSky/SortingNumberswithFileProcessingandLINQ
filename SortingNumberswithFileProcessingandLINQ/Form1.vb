@@ -1,7 +1,7 @@
 ﻿Imports System.IO
 
 Public Class Form1
-    Dim filePath As String = "sample.txt" ' File Location
+    Dim filePath As String = "sample.txt"
     Private Sub btnWrite_Click(sender As Object, e As EventArgs) Handles btnWrite.Click
         Try
             Dim number As Integer = txtInput.Text
