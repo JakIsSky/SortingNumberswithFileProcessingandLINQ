@@ -5,7 +5,7 @@ Public Class Form1
     Private Sub btnWrite_Click(sender As Object, e As EventArgs) Handles btnWrite.Click
         Try
             Dim number As Integer = txtInput.Text
-            Using writer As New StreamWriter(filePath, True) ' True to append
+            Using writer As New StreamWriter(filePath, True)
                 writer.WriteLine(number)
             End Using
             txtInput.Clear()
@@ -43,13 +43,20 @@ Public Class Form1
                 End If
             End While
         End Using
-
-        ' 3. Sort the numbers using LINQ's OrderBy
-        Dim sortedNumbers = numbersList.OrderBy(Function(n) n) ' Sorts in ascending order
-
-        ' 4. Display the sorted numbers in the ListBox
+        Dim sortedNumbers = numbersList.OrderBy(Function(n) n) 
         For Each number As Double In sortedNumbers
             lstSortedNumber.Items.Add(number)
         Next
+    End Sub
+
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        Try
+            Using writer As New StreamWriter(filePath, False)
+            End Using
+            lstSortedNumber.Items.Clear()
+            MessageBox.Show($"Data in {filePath} has been cleared.", "File Cleared", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Catch ex As Exception
+            MessageBox.Show($"Error clearing file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 End Class

@@ -28,6 +28,7 @@ Partial Class Form1
         Me.txtInput = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnSort = New System.Windows.Forms.Button()
+        Me.btnClear = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnWrite
@@ -81,11 +82,21 @@ Partial Class Form1
         Me.btnSort.Text = "Sort"
         Me.btnSort.UseVisualStyleBackColor = True
         '
+        'btnClear
+        '
+        Me.btnClear.Location = New System.Drawing.Point(254, 238)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(75, 23)
+        Me.btnClear.TabIndex = 6
+        Me.btnClear.Text = "Clear"
+        Me.btnClear.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.btnSort)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtInput)
@@ -105,4 +116,5 @@ Partial Class Form1
     Friend WithEvents txtInput As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents btnSort As Button
+    Friend WithEvents btnClear As Button
 End Class
